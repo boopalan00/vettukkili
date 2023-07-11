@@ -1,10 +1,15 @@
 import os
+import json
+
 
 
 def history(url):
     if os.path.isfile('catch'+url):
-        print("histry exists")
+        with open(url+'.json') as f:
+            hf = json.load(f)
     else:
-        print("no history exists")
-    return True
+        hf = False
+    return hf
+     
+
 
